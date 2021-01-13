@@ -111,7 +111,7 @@ gravity_folder.open();
 
 const time_folder = gui.addFolder("Time");
 time_folder.add(simulation_settings.time, "scale", 0.1, 1, 0.001).name("Scale: How slowly does time move in this simulation?");
-time_folder.add(simulation_settings.time, "freeze"             ).name("Freeze: Should time move at all in this simulation?");
+time_folder.add(simulation_settings.time, "freeze"              ).name("Freeze: Should time move at all in this simulation?");
 time_folder.open();
 
 document.getElementById("controls-container").appendChild(gui.domElement);
