@@ -12,7 +12,7 @@ class Rectangle {
 
 	draw () {
 		c.fillStyle   = this.colour;
-		c.shadowColour = this.colour;
+		c.shadowColor = this.colour;
 		c.shadowBlur  = bodies_settings.glow;
 
 		c.save();
