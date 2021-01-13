@@ -56,7 +56,7 @@ let simulation_settings = {
 		y    : 1
 	},
 	time: {
-		scale        : 1
+		scale: 1
 	}
 }
 
@@ -81,7 +81,7 @@ properties_folder.add(bodies_settings.friction,      "normal", 0,  1, 0.01).name
 properties_folder.add(bodies_settings.friction,         "air", 0,  1, 0.01).name("Air Friction: How much does it slow down during flight?");
 properties_folder.add(bodies_settings.friction,      "static", 0, 10, 0.01).name("Static Friction: How much does it slow down over time?");
 properties_folder.add(         bodies_settings, "restitution", 0,  1, 0.01).name("Restitution: How many times & how high can it bounce?");
-properties_folder.add(         bodies_settings,        "glow", 0, 30,     1).name("Intensity: How bright does it glow? ( Warning: Laggy! )");
+properties_folder.add(         bodies_settings,        "glow", 0, 100,   1).name("Intensity: How bright does it glow? ( Warning: Laggy! )");
 properties_folder.open();
 
 const gravity_folder = gui.addFolder("Gravity");
