@@ -45,7 +45,7 @@ let engine = Matter.Engine.create();
 
 
 let drag_control = Matter.MouseConstraint.create(engine, {mouse: Matter.Mouse.create(canvas)});
-drag_control.constraint.stiffness = 0.01;
+drag_control.constraint.stiffness = 0.001;
 Matter.World.add(engine.world, [drag_control]);
 
 
