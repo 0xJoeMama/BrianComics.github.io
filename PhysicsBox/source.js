@@ -56,26 +56,7 @@ let simulation_settings = {
 		y    : 1
 	},
 	time: {
-		scale        : 1,
-		freezing_data: {
-			is_frozen   : false,
-			friction_air: 1,
-			time_scale  : 1
-		},
-		freeze: () => {
-			if (simulation_settings.time.freezing_data.is_frozen == false) {
-				simulation_settings.time.freezing_data.friction_air = bodies_settings.friction.air;
-				simulation_settings.time.freezing_data.time_scale   = simulation_settings.time.scale;
-
-				simulation_settings.time.freezing_data.is_frozen = true;
-				simulation_settings.time.scale                   = 0.1;
-				bodies_settings.friction.air                     = 1;
-			} else {
-				simulation_settings.time.freezing_data.is_frozen = false;
-				bodies_settings.friction.air                     = simulation_settings.time.freezing_data.friction_air;
-				simulation_settings.time.scale                   = simulation_settings.time.freezing_data.time_scale;
-			}
-		}
+		scale        : 1
 	}
 }
 
@@ -111,7 +92,6 @@ gravity_folder.open();
 
 const time_folder = gui.addFolder("Time");
 time_folder.add(simulation_settings.time, "scale", 0.1, 1, 0.01).name("Scale: How slowly does time move in this simulation?");
-time_folder.add(simulation_settings.time, "freeze"             ).name("Freeze: Should time move at all in this simulation?");
 time_folder.open();
 
 document.getElementById("controls-container").appendChild(gui.domElement);
