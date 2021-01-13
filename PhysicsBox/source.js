@@ -96,21 +96,21 @@ const gui = new dat.GUI({
 });
 
 const properties_folder = gui.addFolder("Body Properties");
-properties_folder.add(bodies_settings.friction,      "normal", 0,  1, 0.01).name("Friction: How much does it slow down during collisions?");
-properties_folder.add(bodies_settings.friction,         "air", 0,  1, 0.01).name("Air Friction: How much does it slow down during flight?");
-properties_folder.add(bodies_settings.friction,      "static", 0, 10, 0.01).name("Static Friction: How much does it slow down over time?");
-properties_folder.add(         bodies_settings, "restitution", 0,  1, 0.01).name("Restitution: How many times & how high can it bounce?");
-properties_folder.add(         bodies_settings,        "glow", 0, 30,    1).name("Intensity: How bright does it glow? ( Warning: Laggy! )");
+properties_folder.add(bodies_settings.friction,      "normal", 0,  1, 0.001).name("Friction: How much does it slow down during collisions?");
+properties_folder.add(bodies_settings.friction,         "air", 0,  1, 0.001).name("Air Friction: How much does it slow down during flight?");
+properties_folder.add(bodies_settings.friction,      "static", 0, 10, 0.001).name("Static Friction: How much does it slow down over time?");
+properties_folder.add(         bodies_settings, "restitution", 0,  1, 0.001).name("Restitution: How many times & how high can it bounce?");
+properties_folder.add(         bodies_settings,        "glow", 0, 30,     1).name("Intensity: How bright does it glow? ( Warning: Laggy! )");
 properties_folder.open();
 
 const gravity_folder = gui.addFolder("Gravity");
-gravity_folder.add(simulation_settings.gravity, "scale",  0, 0.01, 0.001).name("Strength: How strong is the gravity in this simulation?");
-gravity_folder.add(simulation_settings.gravity,     "x", -1,    1, 0.01).name("X: Which direction, if any, should horizontal gravity pull?");
-gravity_folder.add(simulation_settings.gravity,     "y", -1,    1, 0.01).name("Y: Which direction, if any, should vertical gravity pull?");
+gravity_folder.add(simulation_settings.gravity, "scale",  0, 0.01, 0.0001).name("Strength: How strong is the gravity in this simulation?");
+gravity_folder.add(simulation_settings.gravity,     "x", -1,    1, 0.0001).name("X: Which direction, if any, should horizontal gravity pull?");
+gravity_folder.add(simulation_settings.gravity,     "y", -1,    1, 0.0001).name("Y: Which direction, if any, should vertical gravity pull?");
 gravity_folder.open();
 
 const time_folder = gui.addFolder("Time");
-time_folder.add(simulation_settings.time, "scale", 0.1, 1, 0.01).name("Scale: How slowly does time move in this simulation?");
+time_folder.add(simulation_settings.time, "scale", 0.1, 1, 0.001).name("Scale: How slowly does time move in this simulation?");
 time_folder.add(simulation_settings.time, "freeze"             ).name("Freeze: Should time move at all in this simulation?");
 time_folder.open();
 
