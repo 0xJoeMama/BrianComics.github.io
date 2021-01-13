@@ -104,7 +104,7 @@ properties_folder.add(         bodies_settings,        "glow", 0, 30,    1).name
 properties_folder.open();
 
 const gravity_folder = gui.addFolder("Gravity");
-gravity_folder.add(simulation_settings.gravity, "scale",  0, 0.01, 0.01).name("Strength: How strong is the gravity in this simulation?");
+gravity_folder.add(simulation_settings.gravity, "scale",  0, 0.01, 0.001).name("Strength: How strong is the gravity in this simulation?");
 gravity_folder.add(simulation_settings.gravity,     "x", -1,    1, 0.01).name("X: Which direction, if any, should horizontal gravity pull?");
 gravity_folder.add(simulation_settings.gravity,     "y", -1,    1, 0.01).name("Y: Which direction, if any, should vertical gravity pull?");
 gravity_folder.open();
