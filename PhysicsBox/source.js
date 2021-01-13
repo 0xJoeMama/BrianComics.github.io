@@ -25,11 +25,11 @@ class Rectangle {
 
 
 const colours = [
-	"rgba(214, 48, 49)", 
-	"rgba(9, 132, 227)", 
-	"rgba(0, 184, 148)", 
-	"rgba(253, 203, 110)", 
-	"rgba(108, 92, 231)", 
+	"rgb(214, 48, 49)", 
+	"rgb(9, 132, 227)", 
+	"rgb(0, 184, 148)", 
+	"rgb(253, 203, 110)", 
+	"rgb(108, 92, 231)", 
 	"rgb(223, 230, 233)"
 ];
 const wall_thickness = 1000;
@@ -135,7 +135,7 @@ Matter.World.add(engine.world, [
 let game_loop = () => {
 	window.requestAnimationFrame(game_loop);
 
-	c.fillStyle = "rgba(45, 52, 54, 1)";
+	c.fillStyle = "rgb(45, 52, 54)";
 	c.fillRect(0, 0, canvas.width, canvas.height);
 
 	bodies.forEach(body => {
