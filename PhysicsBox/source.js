@@ -1,18 +1,18 @@
 class Rectangle {
-	constructor (x, y, width, height, color, options) {
+	constructor (x, y, width, height, colour, options) {
 		this.size = {
 			width : width,
 			height: height
 		};
-		this.color   = color;
+		this.colour   = colour;
 		this.options = options;
 
 		this.body = Matter.Bodies.rectangle(x, y, width, height, this.options);
 	}
 
 	draw () {
-		c.fillStyle   = this.color;
-		c.shadowColor = this.color;
+		c.fillStyle   = this.colour;
+		c.shadowColour = this.colour;
 		c.shadowBlur  = bodies_settings.glow;
 
 		c.save();
