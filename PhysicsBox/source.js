@@ -98,7 +98,6 @@ document.getElementById("controls-container").appendChild(gui.domElement);
 
 
 let bodies = [];
-
 let colour = colours[Math.floor(Math.random() * colours.length)];
 
 let left_stack = Matter.Composites.stack((canvas.width / 2) - 450, canvas.height - 150, 5, 5, 0, 0, (x, y) => {
@@ -112,8 +111,6 @@ let right_stack = Matter.Composites.stack((canvas.width / 2) + 300, canvas.heigh
 	bodies.push(body);
 	return body.body;
 });
-
-colour = colours[Math.floor(Math.random() * colours.length)];
 
 let middle_stack = Matter.Composites.stack((canvas.width / 2) - 225, canvas.height - 450, 15, 15, 0, 0, (x, y) => {
 	let body = new Rectangle(x, y, 30, 30, colour, {});
