@@ -45,10 +45,13 @@ let engine = Matter.Engine.create();
 
 
 let drag_control = Matter.MouseConstraint.create(engine, {mouse: Matter.Mouse.create(canvas)});
-drag_control.constraint.damping = 0.1;
-drag_control.constraint.stiffness = 0.01;
 Matter.World.add(engine.world, [drag_control]);
 
+
+let controls_settings = {
+	damping  : 0.1,
+	stiffness: 0.01
+}
 
 let simulation_settings = {
 	gravity: {
@@ -76,6 +79,11 @@ const gui = new dat.GUI({
 	autoPlace: false,
 	width    : 750
 });
+
+const controls_folder = gui.addFolder("Controls");
+controls_folder.add(controls_settings,   "damping", 0, 1, 0.01).name("Damping: How rounded are sharp turns on the controls?");
+controls_folder.add(controls_settings, "stiffness", 0, 1, 0.01).name("Stiffness: How springy or stiff are the controls?");
+controls_folder.open();
 
 const properties_folder = gui.addFolder("Body Properties");
 properties_folder.add(bodies_settings.friction,      "normal", 0,  1, 0.01).name("Friction: How much does it slow down during collisions?");
@@ -135,6 +143,9 @@ let game_loop = () => {
 
 	c.fillStyle = "rgb(45, 52, 54)";
 	c.fillRect(0, 0, canvas.width, canvas.height);
+
+	drag_control.constraint.damping   = controls_settings.damping;
+	drag_control.constraint.stiffness = controls_settings.stiffness;
 
 	bodies.forEach(body => {
 		body.body.friction       = bodies_settings.friction.normal;
