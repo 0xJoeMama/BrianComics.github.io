@@ -80,8 +80,8 @@ const gui = new dat.GUI({
 });
 
 const control_folder = gui.addFolder("Controls");
-control_folder.add(control_settings, "damping"  , 0, 1, 0.01).name("Damping: How rounded are sharp turns on the controls?");
-control_folder.add(control_settings, "stiffness", 0, 1, 0.01).name("Stiffness: How springy or stiff are the controls?");
+control_folder.add(control_settings, "damping"  , 0  , 1, 0.01).name("Damping: How rounded are sharp turns on the controls?");
+control_folder.add(control_settings, "stiffness", 0.1, 1, 0.01).name("Stiffness: How springy or stiff are the controls?");
 control_folder.open();
 
 const properties_folder = gui.addFolder("Properties");
