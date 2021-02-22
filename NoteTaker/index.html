@@ -15,7 +15,7 @@
 				width: 100vw;
 				height: 100vh;
 				font-family: Nunito, sans-serif;
-				font-size: 14px;
+				font-size: 15px;
 				line-height: 2;
 				align-items: center;
 				justify-content: center;
@@ -35,42 +35,31 @@
 		<div id="editorjs"></div>
 
 		<script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
-		<script src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest"></script>
 		<script src="https://cdn.jsdelivr.net/npm/@editorjs/checklist@latest"></script>
 		<script src="https://cdn.jsdelivr.net/npm/@editorjs/code@latest"></script>
-		<script src="https://cdn.jsdelivr.net/npm/@editorjs/inline-code@latest"></script>
 		<script src="https://cdn.jsdelivr.net/npm/@editorjs/delimiter@latest"></script>
-		<script src="https://cdn.jsdelivr.net/npm/@editorjs/embed@latest"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@editorjs/inline-code@latest"></script>
 		<script src="https://cdn.jsdelivr.net/npm/@editorjs/list@latest"></script>
 		<script src="https://cdn.jsdelivr.net/npm/@editorjs/marker@latest"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@editorjs/quote@latest"></script>
 		<script src="https://cdn.jsdelivr.net/npm/@editorjs/table@latest"></script>
 		<script src="https://cdn.jsdelivr.net/npm/@editorjs/underline@latest"></script>
-		<script src="https://cdn.jsdelivr.net/npm/@editorjs/quote@latest"></script>
 
 
 		<script>
 			const editor = new EditorJS({
 				tools: {
-					header: Header,
-					checklist: {
-						class: Checklist,
-						inlineToolbar: true,
-					},
-					code: CodeTool,
+					header:     Header,
+					list:       List,
+					checklist:  Checklist,
+					table:      Table,
+					quote:      Quote,
+					code:       CodeTool,
+					delimiter:  Delimiter,
 					inlineCode: InlineCode,
-					delimiter: Delimiter,
-					embed: Embed,
-					list: {
-						class: List,
-						inlineToolbar: true,
-					},
-					Marker: Marker,
-					table: {
-						class: Table,
-						inlineToolbar: true
-					},
-					underline: Underline,
-					quote: Quote
+					Marker:     Marker,
+					underline:  Underline,
 				}
 			});
 		</script>
