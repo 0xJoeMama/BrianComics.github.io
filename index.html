@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>The Ashlean Clock</title>
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+			body {
+				width: 100vw;
+				height: 100vh;
+				background-color: #2c3e50;
+				overflow: hidden;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				color: #ecf0f1;
+				font-family: 'Roboto Condensed', sans-serif;
+				font-size: 2.5em;
+			}
+		</style>
+	</head>
+	<body>
+		<p id="outputElement">Test Text</p>
+
+		<script>
+			const divmod = (x, y) => [Math.floor(x / y), x % y];
+			const convertMillisecondsIntoStandardUnits = totalMilliseconds => {
+				let milliseconds, seconds, minutes, hours, days
+
+				tempStorage = null
+
+				milliseconds = totalMilliseconds
+				tempStorage = divmod(milliseconds, 1000)
+				seconds = tempStorage[0]
+				milliseconds = tempStorage[1]
+				tempStorage = divmod(seconds, 60)
+				minutes = tempStorage[0]
+				seconds = tempStorage[1]
+				tempStorage = divmod(minutes, 60)
+				hours = tempStorage[0]
+				minutes = tempStorage[1]
+				tempStorage = divmod(hours, 24)
+				days = tempStorage[0]
+				hours = tempStorage[1]
+
+				return {
+					"days": days,
+					"hours": hours,
+					"minutes": minutes,
+					"seconds": seconds,
+					"milliseconds": milliseconds
+				}
+			}
+
+			const timeIWasBlocked = 1639703564426;
+			
+			const outputElement = document.getElementById("outputElement")
+
+			const animate = () => {
+				requestAnimationFrame(animate);
+
+				currentUnixMillisecond = Date.now()
+				timeSince = currentUnixMillisecond - timeIWasBlocked
+				humanReadableTime = convertMillisecondsIntoStandardUnits(timeSince)
+
+				outputElement.innerText = `It has been ${humanReadableTime['days']} days, ${humanReadableTime['hours'].toString().padStart(2, "0")} hours, ${humanReadableTime['minutes'].toString().padStart(2, "0")} minutes, ${humanReadableTime['seconds'].toString().padStart(2, "0")} seconds, and ${humanReadableTime['milliseconds'].toString().padStart(3, "0")} milliseconds since Ashley blocked you.`
+			}
+
+			animate()
+		</script>
+	</body>
+</html>
