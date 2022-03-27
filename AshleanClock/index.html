@@ -28,9 +28,9 @@
 		<script>
 			const divmod = (x, y) => [Math.floor(x / y), x % y];
 			const convertMillisecondsIntoStandardUnits = totalMilliseconds => {
-				let milliseconds, seconds, minutes, hours, days
+				let milliseconds, seconds, minutes, hours, days = 0
 
-				tempStorage = null
+                let tempStorage = [];
 
 				milliseconds = totalMilliseconds
 				tempStorage = divmod(milliseconds, 1000)
